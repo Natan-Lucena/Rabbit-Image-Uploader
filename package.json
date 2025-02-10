@@ -4,12 +4,17 @@
   "description": "This is a application that handles image and sends to a pub/sub queue",
   "main": "index.js",
   "scripts": {
-    "test": "vitest"
+    "test": "vitest",
+    "start:dev": "nodemon"
   },
   "author": "Natan-Lucena",
   "license": "MIT",
   "devDependencies": {
-    "@types/multer": "^1.4.11"
+    "@types/multer": "^1.4.11",
+    "@types/node": "^22.13.1",
+    "nodemon": "^3.1.9",
+    "ts-node": "^10.9.2",
+    "typescript": "^5.7.3"
   },
   "dependencies": {
     "aws-sdk": "^2.1643.0",
