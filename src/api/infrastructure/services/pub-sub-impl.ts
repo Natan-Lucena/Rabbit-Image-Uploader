@@ -12,8 +12,8 @@ export class RabbitMQPublisher implements PubSub {
     if (!this.connection) {
       this.connection = await amqp.connect(this.rabbitMQUrl);
       this.channel = await this.connection.createChannel();
-      Logger.info("🟢 RabbitMQ conectado");
-      console.log("🟢 RabbitMQ conectado");
+      Logger.info("🟢 RabbitMQ Connected");
+      console.log("🟢 RabbitMQ Connected");
     }
   }
 
@@ -24,7 +24,7 @@ export class RabbitMQPublisher implements PubSub {
 
     await this.channel.assertExchange(channel, "fanout", { durable: true });
     this.channel.publish(channel, "", Buffer.from(JSON.stringify(message)));
-    Logger.info(`📢 Mensagem publicada no canal: ${channel}`);
-    console.log(`📢 Mensagem publicada no canal: ${channel}`);
+    Logger.info(`📢 Message Published on channel: ${channel}`);
+    console.log(`📢 Message Published on channel: ${channel}`);
   }
 }
