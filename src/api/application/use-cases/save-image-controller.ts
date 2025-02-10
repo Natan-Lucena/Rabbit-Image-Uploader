@@ -22,7 +22,7 @@ export class SaveImageController extends BaseController {
         "Invalid file type. Please upload an image (JPEG or PNG)."
       );
     }
-    const validation = await saveImageSchema.safeParseAsync(req.body);
+    const validation = await saveImageSchema.safeParseAsync(req.params);
     if (!validation.success) {
       const errors = formatValidationErrors(validation.error);
       return this.clientError(res, undefined, errors);
