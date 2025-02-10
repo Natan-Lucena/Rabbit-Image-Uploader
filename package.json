@@ -1,0 +1,18 @@
+{
+  "name": "images-api",
+  "version": "1.0.0",
+  "description": "This is a application that handles image and sends to a pub/sub queue",
+  "main": "index.js",
+  "scripts": {
+    "test": "vitest"
+  },
+  "author": "Natan-Lucena",
+  "license": "MIT",
+  "devDependencies": {
+    "@types/multer": "^1.4.11"
+  },
+  "dependencies": {
+    "aws-sdk": "^2.1643.0",
+    "multer": "^1.4.5-lts.1"
+  }
+}
