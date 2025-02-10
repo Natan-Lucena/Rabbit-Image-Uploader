@@ -3,8 +3,8 @@ import QueryString from "qs";
 import { z } from "zod";
 
 import { Logger } from "../../core/logger";
-import { Uuid } from "../../core/uuid";
 import { ValidationError } from "../../core/validation-erros";
+import { Uuid } from "../../core/uuid";
 
 export abstract class BaseController {
   protected abstract executeImpl(
