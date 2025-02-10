@@ -1,6 +1,8 @@
 import { Request, Response } from "express";
 import { BaseController } from "../../shared/infra/http/base-controller";
 import { SaveImageUseCase } from "./save-image";
+import { saveImageSchema } from "../schemas/save-image.schema";
+import { formatValidationErrors } from "../../shared/core/validation-erros";
 
 export class SaveImageController extends BaseController {
   constructor(private readonly saveImageUseCase: SaveImageUseCase) {
@@ -20,9 +22,14 @@ export class SaveImageController extends BaseController {
         "Invalid file type. Please upload an image (JPEG or PNG)."
       );
     }
+    const validation = await saveImageSchema.safeParseAsync(req.body);
+    if (!validation.success) {
+      const errors = formatValidationErrors(validation.error);
+      return this.clientError(res, undefined, errors);
+    }
 
     const result = await this.saveImageUseCase.execute({
-      externalId: req.params.externalId,
+      externalId: validation.data.externalId,
       file,
     });
     if (!result.ok) {
