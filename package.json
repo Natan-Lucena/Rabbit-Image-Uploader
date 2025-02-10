@@ -14,7 +14,10 @@
   "dependencies": {
     "aws-sdk": "^2.1643.0",
     "dotenv": "^16.4.7",
+    "images-api": "file:",
     "multer": "^1.4.5-lts.1",
-    "winston": "^3.17.0"
+    "uuid": "^11.0.5",
+    "winston": "^3.17.0",
+    "zod": "^3.24.1"
   }
 }
