@@ -1,6 +1,6 @@
 ## Description
 
-This application is a messaging system that uses rabbitMQ to send images via pub/sub!
+This application is a messaging system that uses rabbitMQ to send images via pub/sub and storages it on AWS S3!
 
 ## Instalation
 
